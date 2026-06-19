@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>MST Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ANALIZADOR MST</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>Variables</h3>
+<p>{{ datos.variables }}</p>
+</div>
+
+<div class="card">
+<h3>Registros</h3>
+<p>{{ datos.registros }}</p>
+</div>
+
+<div class="card">
+<h3>Peso Prim</h3>
+<p>{{ datos.peso_prim }}</p>
+</div>
+
+<div class="card">
+<h3>Peso Kruskal</h3>
+<p>{{ datos.peso_kruskal }}</p>
+</div>
+
+</div>
+
+<h2>Entropías</h2>
+
+<table>
+
+<tr>
+<th>Variable</th>
+<th>Entropía</th>
+</tr>
+
+{% for fila in entropias %}
+
+<tr>
+<td>{{ fila.Variable }}</td>
+<td>{{ fila.Entropia }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Prim</h2>
+
+<table>
+
+<tr>
+<th>Origen</th>
+<th>Destino</th>
+<th>Peso</th>
+</tr>
+
+{% for fila in prim %}
+
+<tr>
+<td>{{ fila.Origen }}</td>
+<td>{{ fila.Destino }}</td>
+<td>{{ fila.InformacionMutua }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Kruskal</h2>
+
+<table>
+
+<tr>
+<th>Origen</th>
+<th>Destino</th>
+<th>Peso</th>
+</tr>
+
+{% for fila in kruskal %}
+
+<tr>
+<td>{{ fila.Origen }}</td>
+<td>{{ fila.Destino }}</td>
+<td>{{ fila.InformacionMutua }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<img src="{{ url_for('static', filename='img/grafo_completo.png') }}" class="grafico">
+
+<img src="{{ url_for('static', filename='img/mst_prim.png') }}" class="grafico">
+
+<img src="{{ url_for('static', filename='img/mst_kruskal.png') }}" class="grafico">
+
+</div>
+
+</body>
+</html>

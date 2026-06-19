@@ -1,0 +1,40 @@
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#2563eb;
+    padding:10px;
+}
+
+td{
+    background:#1e293b;
+    padding:10px;
+}
+
+img{
+    width:100%;
+    background:white;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 20px;
+}
